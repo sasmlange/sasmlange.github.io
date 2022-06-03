@@ -1,0 +1,40 @@
+Developer Guide
+====================
+
+What to learn how to code a J* package that can be installed by JPM? Well if
+you do, lets get started.
+
+First you want to make your package. After you coded it you want to compile
+your source files.
+
+Check the
+`Official J* Docs <https://github.com/bamless/jstar#the-jstarc-compiler>`_
+to learn how to compile
+
+After that you eed to set up your configuration file. Make a file called
+config.json. Inside of it put the following code:
+
+.. code-block:: json
+
+    {
+      "Name": "testpackage",
+      "Version": "1.2.9",
+      "Description": "A package that is very useful. (Never mind, it's useless)"
+    }
+
+You can put the name of your package in the "Name" Section.
+Put the version of your package in the version section.
+Type your deception in the description section.
+
+Now you need to zip your project up.
+
+.. image:: zip.png
+  :width: 800
+  :alt: How to Zip
+
+.. note::
+
+    You need to highlight the files, then zip them up.
+    Do not highlight the folder.
+
+Your done! Upload your zip some where and let people use JPM!

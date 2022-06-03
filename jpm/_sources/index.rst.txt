@@ -1,0 +1,16 @@
+.. J* Package Manager documentation master file, created by
+   sphinx-quickstart on Tue May 31 18:05:22 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+J* Package Manager
+==============================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   intro.rst
+   download.rst
+   use.rst
+   dev.rst

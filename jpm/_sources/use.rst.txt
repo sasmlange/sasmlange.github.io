@@ -1,0 +1,72 @@
+Usage
+========
+
+Installing
+-----------
+
+First you have to open your terminal and cd to the root directory of your project.
+
+.. code-block:: text
+
+    C:\jstarstuff\myproject>
+
+The contents of your folder might look something like this:
+
+.. code-block:: text
+
+    myproject
+        script.jsr
+        ...
+
+Now run something like this:
+
+.. code-block:: bash
+
+    jpm install https://sasmlange.github.io/jstar_package.zip
+
+What just happened? We used jpm to install something! Lets go over the command
+part by part.
+
+
+
+The jpm calls jpm. The install part is the type of action that jpm will do. It
+can be install or uninstall. The last part is the url. This is what you want to
+download.
+
+Importing
+----------
+
+Now after you installed the package you can import it to your scripts.
+
+Lets say that your file structure looks like this after the install of
+test-package:
+
+.. code-block:: text
+
+    myproject
+        script.jsr
+        jpm
+            testpackage
+                config.json
+                script.jsc
+            ...
+        ...
+
+Now inside of your script.jsr, you can import the package like this:
+
+.. code-block:: python
+
+    import jpm.testpackage.script
+
+The import command shows the path to script.jsc
+
+Uninstalling:
+----------------
+
+Now lets see how to uninstall a package:
+
+.. code-block::
+
+    jpm uninstall testpackage
+
+See how we used the package name instead of the link.

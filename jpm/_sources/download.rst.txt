@@ -1,0 +1,62 @@
+Download and Setup
+======================
+
+.. rubric:: Step 1: Download JPM
+
+Download the latest release of JPM go to: https://github.com/sasmlange/JPM/releases.
+
+.. rubric:: Step 2: Follow the Installer instructions
+
+.. Note::
+
+    This will install it on C: (drive C). If your drive is not call C, then you
+    must download the source files.
+
+.. rubric:: Step 3: Add JPM to PATH
+
+1. Click the windows icon and type Edit the system environment variables.
+
+.. image:: find.png
+  :width: 800
+  :alt: Windows Search
+
+
+2. Click "Environment Variables"
+
+.. image:: open.png
+  :width: 800
+  :alt: Windows Control Panel
+
+3. Double click on "Path"
+
+.. image:: edit.png
+  :width: 800
+  :alt: Environment Variables Editor
+
+4. Click add then type: C:\jpm\bin
+
+.. image:: add.png
+  :width: 800
+  :alt: Path Environment Variable Editor
+
+.. rubric:: Step 4: Test Install
+
+Open the Windows Terminal and type:
+
+.. code-block:: bash
+
+    jpm -h
+
+The result should be something like this:
+
+.. code-block::
+
+    usage: jpm [-h] type name
+
+    positional arguments:
+      type        Can be install or uninstall
+      name        The URL of your package
+
+    options:
+      -h, --help  show this help message and exit
+
