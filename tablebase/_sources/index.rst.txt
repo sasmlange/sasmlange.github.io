@@ -1,0 +1,33 @@
+.. Tablebase documentation master file, created by
+   sphinx-quickstart on Fri Jul 15 09:59:52 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Tablebase's documentation!
+=====================================
+.. image:: https://badge.fury.io/py/tablebase.svg
+    :target: https://badge.fury.io/py/tablebase
+
+.. image:: https://static.pepy.tech/personalized-badge/tablebase?period=month&units=international_system&left_color=grey&right_color=orange&left_text=Downloads
+   :target: https://pepy.tech/project/tablebase
+
+Tablebase is the a lightweight tool make tables easy in python.
+
+`Stack Overflow home <https://stackoverflow.com/>`_.
+
+Install with pip:
+
+.. code-block:: console
+
+   pip install tablebase
+
+.. automodule:: tablebase
+    :members:
+
+.. note::
+
+   :code:`.table_content` returns a list of lists
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
