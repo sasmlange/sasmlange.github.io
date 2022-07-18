@@ -11,9 +11,13 @@ Tablebase is the a lightweight tool make tables easy in python.
 
 Install with pip:
 
-.. code-block:: console
+.. code-block:: bash
 
    pip install tablebase
+
+
+
+..
 
 .. automodule:: tablebase
     :members:
@@ -24,4 +28,5 @@ Install with pip:
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
    :caption: Contents:
