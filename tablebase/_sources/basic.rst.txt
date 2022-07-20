@@ -94,7 +94,7 @@ Step 4: Adding Rows
 
 To add a row we use the **add_row** method. The **add_row** method adds a
 list to the takes that the user provides. More information can be found here:
-:meth:`tablebase.Table.add_row
+:meth:`tablebase.Table.add_row`
 
 Lets add the following rows: Los Angeles, New York, Plymouth
 
