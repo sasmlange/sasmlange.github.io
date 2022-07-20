@@ -37,6 +37,7 @@
     <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Basic Tutorial" href="basic.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -73,7 +74,24 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic.html">
+   Basic Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="docs.html">
+   Documentation
+  </a>
+ </li>
+</ul>
+
     </div>
 </nav> <!-- To handle the deprecated key -->
 
@@ -159,177 +177,27 @@
   <div class="section" id="welcome-to-tablebase-s-documentation">
 <h1>Welcome to Tablebase’s documentation!<a class="headerlink" href="#welcome-to-tablebase-s-documentation" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://badge.fury.io/py/tablebase"><img alt="https://badge.fury.io/py/tablebase.svg" src="https://badge.fury.io/py/tablebase.svg" /></a>
-<a class="reference external image-reference" href="https://pepy.tech/project/tablebase"><img alt="https://static.pepy.tech/personalized-badge/tablebase?period=month&amp;units=international_system&amp;left_color=grey&amp;right_color=orange&amp;left_text=Downloads" src="https://static.pepy.tech/personalized-badge/tablebase?period=month&amp;units=international_system&amp;left_color=grey&amp;right_color=orange&amp;left_text=Downloads" /></a>
+<a class="reference external image-reference" href="https://pepy.tech/project/tablebase"><img alt="https://static.pepy.tech/personalized-badge/tablebase?period=total&amp;units=international_system&amp;left_color=grey&amp;right_color=orange&amp;left_text=Downloads" src="https://static.pepy.tech/personalized-badge/tablebase?period=total&amp;units=international_system&amp;left_color=grey&amp;right_color=orange&amp;left_text=Downloads" /></a>
 <p>Tablebase is the a lightweight tool make tables easy in python.</p>
 <p>Install with pip:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install tablebase
 </pre></div>
 </div>
-<span class="target" id="module-tablebase"></span><dl class="py class">
-<dt class="sig sig-object py" id="tablebase.CsvTable">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tablebase.</span></span><span class="sig-name descname"><span class="pre">CsvTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">divider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.CsvTable" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to import a CSV file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>csv_path</strong> – The path to your CSV</p></li>
-<li><p><strong>divider</strong> – The divider between columns.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="tablebase.Table">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tablebase.</span></span><span class="sig-name descname"><span class="pre">Table</span></span><a class="headerlink" href="#tablebase.Table" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Table class is the basic table in tablebase.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="tablebase.Table.add_col">
-<span class="sig-name descname"><span class="pre">add_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.add_col" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to add a column to your table.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>col_name</strong> – The name of your new column.</p></li>
-<li><p><strong>default_value</strong> – The default value for new records in that column or a list of specific values for this column.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="tablebase.Table.add_expand">
-<span class="sig-name descname"><span class="pre">add_expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.add_expand" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to add a column that is based on another column.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>new_col_name</strong> – The name for you new column.</p></li>
-<li><p><strong>old_col_name</strong> – The name for the column you wish to expand from.</p></li>
-<li><p><strong>action</strong> – What change you want from your old column to your new column. Can be “+” (or “add”), “-” (or subtract), “*” (or multiply), “/” (or divide), or “join” for combining two strings.</p></li>
-<li><p><strong>value</strong> – What difference from the old column you wish to make. For example, if your action was “*”, then and your value was “2”, everything would get multiplied by two.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="tablebase.Table.add_row">
-<span class="sig-name descname"><span class="pre">add_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_content</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.add_row" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to add a row to your table.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>new_content</strong> – A list of the entries you wish to add.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="tablebase.Table.display">
-<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">divider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">',</span> <span class="pre">'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.display" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use display for pretty-printing to the console.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>divider</strong> – Used to customize the divider between the columns.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A string with a pretty-print of your table.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="tablebase.Table.edit_row">
-<span class="sig-name descname"><span class="pre">edit_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.edit_row" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to edit a record of your table.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>row_num</strong> – The row number of the record that you wish to edit.</p></li>
-<li><p><strong>col_name</strong> – The column name of your record that you wish to edit.</p></li>
-<li><p><strong>new_value</strong> – The new record value.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="tablebase.Table.filter">
-<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'exact'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'END'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_headers_to_result</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legacy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to filter your table.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>col_name</strong> – The column you wish to use to filter.</p></li>
-<li><p><strong>value</strong> – The value you wish to use to filter with.</p></li>
-<li><p><strong>type</strong> – The filter type. Can be “exact” (same), “iexact” (not case-sensitive), “greaterthan”, or “lessthan”.</p></li>
-<li><p><strong>search_start</strong> – The row to start filtering at.</p></li>
-<li><p><strong>search_end</strong> – The row to stop filtering at. Type “END” to stop at the end.</p></li>
-<li><p><strong>add_headers_to_result</strong> – If True, your table headers will be included in the result.</p></li>
-<li><p><strong>legacy</strong> – If True, will return a list instead of a Table object.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A Table object with the filtered results (unless specified otherwise).</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="tablebase.Table.get_col">
-<span class="sig-name descname"><span class="pre">get_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.get_col" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to get all data in one column.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>col_name</strong> – The name of the column you wish to get.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of all data in one column.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="tablebase.Table.save">
-<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">divider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.save" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to save your table for that file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>path</strong> – Path to that file.</p></li>
-<li><p><strong>divider</strong> – The divider between columns.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="tablebase.Table.table_content">
-<span class="sig-name descname"><span class="pre">table_content</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[[]]</span></em><a class="headerlink" href="#tablebase.Table.table_content" title="Permalink to this definition">¶</a></dt>
-<dd><p>The table_content holds the table data</p>
-</dd></dl>
-
-</dd></dl>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="code docutils literal notranslate"><span class="pre">.table_content</span></code> returns a list of lists</p>
-</div>
+<table class="table" id="id1">
+<caption><span class="caption-text">Contents</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="docs.html">Documentation</a></p></td>
+<td><p><a class="reference external" href="basic.html">Basic Tutorial</a></p></td>
+</tr>
+<tr class="row-even"><td><p>The full documentation of tablebase.</p></td>
+<td><p>A basic tutorial about tablebase where you learn how to create a table.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -340,6 +208,13 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="basic.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Basic Tutorial</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

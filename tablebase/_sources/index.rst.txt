@@ -3,7 +3,7 @@ Welcome to Tablebase's documentation!
 .. image:: https://badge.fury.io/py/tablebase.svg
     :target: https://badge.fury.io/py/tablebase
 
-.. image:: https://static.pepy.tech/personalized-badge/tablebase?period=month&units=international_system&left_color=grey&right_color=orange&left_text=Downloads
+.. image:: https://static.pepy.tech/personalized-badge/tablebase?period=total&units=international_system&left_color=grey&right_color=orange&left_text=Downloads
    :target: https://pepy.tech/project/tablebase
 
 Tablebase is the a lightweight tool make tables easy in python.
@@ -15,18 +15,18 @@ Install with pip:
 
    pip install tablebase
 
+.. list-table:: Contents
 
+   * - `Documentation <docs.html>`_
+     - `Basic Tutorial <basic.html>`_
 
-..
-
-.. automodule:: tablebase
-    :members:
-
-.. note::
-
-   :code:`.table_content` returns a list of lists
+   * - The full documentation of tablebase.
+     - A basic tutorial about tablebase where you learn how to create a table.
 
 .. toctree::
-   :maxdepth: 2
-   :hidden:
-   :caption: Contents:
+    :maxdepth: 2
+    :hidden:
+    :caption: Contents:
+
+    basic
+    docs
