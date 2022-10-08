@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Centillionware Press</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        * {
+            z-index: 100;
+        }
+
+        .stick {
+            padding: 10px;
+            position: -webkit-sticky;
+            position: fixed;
+            z-index: 200;
+            font-size: x-large;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .stick{
+                font-size: large;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="outerContainer">
+        <h3 class="written-in-ink"><a href="https://www.inklestudios.com/ink">WRITTEN IN INK</a></h3>
+
+
+        
+            <h2 style="color: green;" class="stick">Money: $<span id="Money">50</span></h2>
+            <br><br>
+            <h2 style="color: red;" class="stick">Casino Credits: <span id="Credits">0</span></h2>
+        <div id="controls" class="buttons">
+          <a id="rewind" title="Restart story from beginning">restart</a>
+          <a id="save" title="Save progress">save</a>
+          <a id="reload" title="Reload from save point">load</a>
+          <a id="theme-switch" title="Switch theme">theme</a>
+        </div>
+
+        <div id="story" class="container">
+            <div class="header">
+                <h1>Life</h1>
+                <h2 class="byline">By Max Lange</h2>
+            </div>
+        </div>
+        <br><br>
+    </div>
+	
+
+    <script src="ink.js"></script>
+    <script src="story.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
