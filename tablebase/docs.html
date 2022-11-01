@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Documentation &#8212; Tablebase 1.4.2 documentation</title>
+    <title>Documentation &#8212; Tablebase 1.5.4 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -66,7 +66,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Tablebase 1.4.2 documentation</h1>
+      <h1 class="site-logo" id="site-title">Tablebase 1.5.4 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -213,15 +213,15 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tablebase.Table.add_expand">
-<span class="sig-name descname"><span class="pre">add_expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.add_expand" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to add a column that is based on another column.</p>
+<span class="sig-name descname"><span class="pre">add_expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formula</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.add_expand" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Used to add a column that is based on another column.</p>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>new_col_name</strong> – The name for you new column.</p></li>
-<li><p><strong>old_col_name</strong> – The name for the column you wish to expand from.</p></li>
-<li><p><strong>action</strong> – What change you want from your old column to your new column. Can be “+” (or “add”), “-” (or subtract), “*” (or multiply), “/” (or divide), or “join” for combining two strings.</p></li>
-<li><p><strong>value</strong> – What difference from the old column you wish to make. For example, if your action was “*”, then and your value was “2”, everything would get multiplied by two.</p></li>
+<li><p><strong>new_col_name</strong> – The new name for your column.</p></li>
+<li><p><strong>formula</strong> – The formula for your expand. <a class="reference external" href="expandformula.html">More information</a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -237,6 +237,20 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>new_content</strong> – A list of the entries you wish to add.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tablebase.Table.del_col">
+<span class="sig-name descname"><span class="pre">del_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.del_col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to delete a column</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>col_name</strong> – The name of the column you wish to delete</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p></p>
@@ -268,6 +282,26 @@
 <li><p><strong>row_num</strong> – The row number of the record that you wish to edit.</p></li>
 <li><p><strong>col_name</strong> – The column name of your record that you wish to edit.</p></li>
 <li><p><strong>new_value</strong> – The new record value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tablebase.Table.expand">
+<span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formula</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.expand" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Used to override a column that is based on another column.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col_name</strong> – The name of the column that you want to override.</p></li>
+<li><p><strong>formula</strong> – <p>The formula for your expand. <a class="reference external" href="expandformula.html">More information</a></p>
+</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -313,6 +347,40 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="tablebase.Table.override_col">
+<span class="sig-name descname"><span class="pre">override_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.override_col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to override all content in the column</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col_name</strong> – The name of the column</p></li>
+<li><p><strong>value</strong> – A list with your new column content.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tablebase.Table.rename_col">
+<span class="sig-name descname"><span class="pre">rename_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_col_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.rename_col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to rename a column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col_name</strong> – The current name of the column</p></li>
+<li><p><strong>new_col_name</strong> – The new name that you want to give your column</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="tablebase.Table.save">
 <span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">divider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tablebase.Table.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used to save your table for that file.</p>
@@ -333,14 +401,14 @@
 <dt class="sig sig-object py" id="tablebase.Table.table_content">
 <span class="sig-name descname"><span class="pre">table_content</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[[]]</span></em><a class="headerlink" href="#tablebase.Table.table_content" title="Permalink to this definition">¶</a></dt>
 <dd><p>The table_content holds the table data</p>
-</dd></dl>
-
-</dd></dl>
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code class="code docutils literal notranslate"><span class="pre">.table_content</span></code> returns a list of lists</p>
 </div>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

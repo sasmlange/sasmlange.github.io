@@ -3,7 +3,3 @@ Documentation
 
 .. automodule:: tablebase
     :members:
-
-.. note::
-
-   :code:`.table_content` returns a list of lists
