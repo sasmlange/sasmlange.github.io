@@ -163,47 +163,19 @@ lists. If you want to view it in a nicer form, use the :code:`display()` method.
     My_Table.add_row(["New York", "Peter Minuit", "8419000"])
     My_Table.add_row(["Plymouth", "William Bradford", "60803"])
 
-    print(My_Table.display())
+    My_Table.display()
 
 
-.. code-block:: bash
-
-    City, Founder, Population
-    Los Angeles, Felipe de Neve, 3967000
-    New York, Peter Minuit, 8419000
-    Plymouth, William Bradford, 60803
-
-
-This looks more like a table. We can take it one step further and customise
-the divider between the columns. The default is a comma followed by a space.
-See the code below to see how to change the divider.
-
-.. code-block:: python
-    :emphasize-lines: 13
-
-    import tablebase
-
-    My_Table = tablebase.Table()
-
-    My_Table.add_col("City")
-    My_Table.add_col("Founder")
-    My_Table.add_col("Population")
-
-    My_Table.add_row(["Los Angeles", "Felipe de Neve", "3967000"])
-    My_Table.add_row(["New York", "Peter Minuit", "8419000"])
-    My_Table.add_row(["Plymouth", "William Bradford", "60803"])
-
-    print(My_Table.display(" | "))
-
-Output:
 
 .. code-block:: bash
 
-    City | Founder | Population
-    Los Angeles | Felipe de Neve | 3967000
-    New York | Peter Minuit | 8419000
-    Plymouth | William Bradford | 60803
+        City        Founder          Population
+   Los Angeles     Felipe de Neve      3967000
+      New York       Peter Minuit      8419000
+      Plymouth   William Bradford        60803
 
+
+This looks more like a table.
 
 .. tip::
 
@@ -234,14 +206,15 @@ We will use the **filter** method to filter the table and then print out the res
     My_Table.add_row(["New York", "Peter Minuit", "8419000"])
     My_Table.add_row(["Plymouth", "William Bradford", "60803"])
 
-    print(My_Table.display())
+    My_Table.display()
 
-    print(My_Table.filter("Population", "1000000", "greaterthan").display())
+    print(My_Table.filter("int(@Population@) > 1000000").display())
 
 What did we just do? We filtered the **Population** column in **My_Table**
 with the **filter** method for cities that have a population greater than
-1 million (1000000) people. This returns a Table object with the filtered
-results. We then use the :code:`display()` method to pretty-print our table.
+1 million (1000000) people. We had to make **Population** a integer before
+filtering. This returns a Table object with the filtered results. We then
+use the :code:`display()` method to pretty-print our table.
 For more information see
 :meth:`tablebase.Table.filter`
 
@@ -249,14 +222,16 @@ The result should look something like this:
 
 .. code-block:: bash
 
-    City, Founder, Population
-    Los Angeles, Felipe de Neve, 3967000
-    New York, Peter Minuit, 8419000
-    Plymouth, William Bradford, 60803
+          City            Founder      Population
+   Los Angeles     Felipe de Neve      3967000
+      New York       Peter Minuit      8419000
+      Plymouth   William Bradford        60803
 
-    City, Founder, Population
-    Los Angeles, Felipe de Neve, 3967000
-    New York, Peter Minuit, 8419000
+
+          City            Founder      Population
+   Los Angeles     Felipe de Neve      3967000
+      New York       Peter Minuit      8419000
+
 
 Notice how the second table does not have Plymouth because it does not have a
 population greater than 1 million.

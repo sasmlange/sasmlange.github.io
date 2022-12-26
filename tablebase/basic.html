@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Tutorial &#8212; Tablebase 1.5.4 documentation</title>
+    <title>Basic Tutorial &#8212; Tablebase 1.6.1 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -67,7 +67,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Tablebase 1.5.4 documentation</h1>
+      <h1 class="site-logo" id="site-title">Tablebase 1.6.1 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -385,40 +385,16 @@ lists. If you want to view it in a nicer form, use the <code class="code docutil
 <span class="n">My_Table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;Peter Minuit&quot;</span><span class="p">,</span> <span class="s2">&quot;8419000&quot;</span><span class="p">])</span>
 <span class="n">My_Table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&quot;Plymouth&quot;</span><span class="p">,</span> <span class="s2">&quot;William Bradford&quot;</span><span class="p">,</span> <span class="s2">&quot;60803&quot;</span><span class="p">])</span>
 
-<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">My_Table</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+<span class="hll"><span class="n">My_Table</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </span></pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>City, Founder, Population
-Los Angeles, Felipe de Neve, <span class="m">3967000</span>
-New York, Peter Minuit, <span class="m">8419000</span>
-Plymouth, William Bradford, <span class="m">60803</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>     City        Founder          Population
+Los Angeles     Felipe de Neve      <span class="m">3967000</span>
+   New York       Peter Minuit      <span class="m">8419000</span>
+   Plymouth   William Bradford        <span class="m">60803</span>
 </pre></div>
 </div>
-<p>This looks more like a table. We can take it one step further and customise
-the divider between the columns. The default is a comma followed by a space.
-See the code below to see how to change the divider.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tablebase</span>
-
-<span class="n">My_Table</span> <span class="o">=</span> <span class="n">tablebase</span><span class="o">.</span><span class="n">Table</span><span class="p">()</span>
-
-<span class="n">My_Table</span><span class="o">.</span><span class="n">add_col</span><span class="p">(</span><span class="s2">&quot;City&quot;</span><span class="p">)</span>
-<span class="n">My_Table</span><span class="o">.</span><span class="n">add_col</span><span class="p">(</span><span class="s2">&quot;Founder&quot;</span><span class="p">)</span>
-<span class="n">My_Table</span><span class="o">.</span><span class="n">add_col</span><span class="p">(</span><span class="s2">&quot;Population&quot;</span><span class="p">)</span>
-
-<span class="n">My_Table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span> <span class="s2">&quot;Felipe de Neve&quot;</span><span class="p">,</span> <span class="s2">&quot;3967000&quot;</span><span class="p">])</span>
-<span class="n">My_Table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;Peter Minuit&quot;</span><span class="p">,</span> <span class="s2">&quot;8419000&quot;</span><span class="p">])</span>
-<span class="n">My_Table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&quot;Plymouth&quot;</span><span class="p">,</span> <span class="s2">&quot;William Bradford&quot;</span><span class="p">,</span> <span class="s2">&quot;60803&quot;</span><span class="p">])</span>
-
-<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">My_Table</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot; | &quot;</span><span class="p">))</span>
-</span></pre></div>
-</div>
-<p>Output:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>City <span class="p">|</span> Founder <span class="p">|</span> Population
-Los Angeles <span class="p">|</span> Felipe de Neve <span class="p">|</span> <span class="m">3967000</span>
-New York <span class="p">|</span> Peter Minuit <span class="p">|</span> <span class="m">8419000</span>
-Plymouth <span class="p">|</span> William Bradford <span class="p">|</span> <span class="m">60803</span>
-</pre></div>
-</div>
+<p>This looks more like a table.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can use <strong>table_content</strong> to overwrite the table with a new one.</p>
@@ -442,26 +418,28 @@ million.</p>
 <span class="n">My_Table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;Peter Minuit&quot;</span><span class="p">,</span> <span class="s2">&quot;8419000&quot;</span><span class="p">])</span>
 <span class="n">My_Table</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&quot;Plymouth&quot;</span><span class="p">,</span> <span class="s2">&quot;William Bradford&quot;</span><span class="p">,</span> <span class="s2">&quot;60803&quot;</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">My_Table</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+<span class="n">My_Table</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
-<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">My_Table</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;Population&quot;</span><span class="p">,</span> <span class="s2">&quot;1000000&quot;</span><span class="p">,</span> <span class="s2">&quot;greaterthan&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">My_Table</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;int(@Population@) &gt; 1000000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
 </span></pre></div>
 </div>
 <p>What did we just do? We filtered the <strong>Population</strong> column in <strong>My_Table</strong>
 with the <strong>filter</strong> method for cities that have a population greater than
-1 million (1000000) people. This returns a Table object with the filtered
-results. We then use the <code class="code docutils literal notranslate"><span class="pre">display()</span></code> method to pretty-print our table.
+1 million (1000000) people. We had to make <strong>Population</strong> a integer before
+filtering. This returns a Table object with the filtered results. We then
+use the <code class="code docutils literal notranslate"><span class="pre">display()</span></code> method to pretty-print our table.
 For more information see
 <a class="reference internal" href="docs.html#tablebase.Table.filter" title="tablebase.Table.filter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tablebase.Table.filter()</span></code></a></p>
 <p>The result should look something like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>City, Founder, Population
-Los Angeles, Felipe de Neve, <span class="m">3967000</span>
-New York, Peter Minuit, <span class="m">8419000</span>
-Plymouth, William Bradford, <span class="m">60803</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>       City            Founder      Population
+Los Angeles     Felipe de Neve      <span class="m">3967000</span>
+   New York       Peter Minuit      <span class="m">8419000</span>
+   Plymouth   William Bradford        <span class="m">60803</span>
 
-City, Founder, Population
-Los Angeles, Felipe de Neve, <span class="m">3967000</span>
-New York, Peter Minuit, <span class="m">8419000</span>
+
+       City            Founder      Population
+Los Angeles     Felipe de Neve      <span class="m">3967000</span>
+   New York       Peter Minuit      <span class="m">8419000</span>
 </pre></div>
 </div>
 <p>Notice how the second table does not have Plymouth because it does not have a
