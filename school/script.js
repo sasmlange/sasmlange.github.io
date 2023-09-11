@@ -64,6 +64,7 @@ async function update() {
     let mx2 = parseInt(document.getElementById("mx2"));
     let my2 = parseInt(document.getElementById("my2"));
 
+    console.log(mx1, my1)
     let x_result = (mx1 + mx2)/2;
     let y_result = (my1 + my2)/2;
 
