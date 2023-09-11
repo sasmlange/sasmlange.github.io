@@ -74,6 +74,7 @@ async function update() {
     let y_result = (my1 + my2)/2
 
     document.getElementById("mr").innerHTML = `(${x_result}, ${y_result})`
+    console.log(`(${x_result}, ${y_result})`)
 }
 
 update_result();
