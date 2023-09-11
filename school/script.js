@@ -73,7 +73,7 @@ async function update() {
     let x_result = (mx1 + mx2)/2
     let y_result = (my1 + my2)/2
 
-    document.getElementById(`(${x_result}, ${y_result})`)
+    document.getElementById("mr").innerHTML = `(${x_result}, ${y_result})`
 }
 
 update_result();
