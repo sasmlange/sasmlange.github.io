@@ -62,6 +62,18 @@ async function update() {
     await reset_mathjax("run");
     await reset_mathjax("rise");
     await reset_mathjax("pt");
+
+    // Midpoint
+
+    let mx1 = document.getElementById("mx1");
+    let my1 = document.getElementById("my1");
+    let mx2 = document.getElementById("mx2");
+    let my2 = document.getElementById("my2");
+
+    let x_result = (mx1 + mx2)/2
+    let y_result = (my1 + my2)/2
+
+    document.getElementById(`(${x_result}, ${y_result})`)
 }
 
 update_result();
