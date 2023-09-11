@@ -58,6 +58,17 @@ async function update() {
     document.getElementById("run").innerHTML = `$$ ${x1} - ${x2} = ${run} $$`
     document.getElementById("rise").innerHTML = `$$ ${y1} - ${y2} = ${rise} $$`
     document.getElementById("pt").innerHTML = `$$ \\sqrt{${run}^2 + ${rise}^2} = ${distance} $$`
+    
+    let mx1 = document.getElementById("mx1");
+    let my1 = document.getElementById("my1");
+    let mx2 = document.getElementById("mx2");
+    let my2 = document.getElementById("my2");
+
+    let x_result = (mx1 + mx2)/2;
+    let y_result = (my1 + my2)/2;
+
+    document.getElementById("mr").innerHTML = `(${x_result}, ${y_result})`;
+    console.log(`(${x_result}, ${y_result})`);
 
     await reset_mathjax("run");
     await reset_mathjax("rise");
@@ -65,16 +76,7 @@ async function update() {
 
     // Midpoint
 
-    let mx1 = document.getElementById("mx1");
-    let my1 = document.getElementById("my1");
-    let mx2 = document.getElementById("mx2");
-    let my2 = document.getElementById("my2");
-
-    let x_result = (mx1 + mx2)/2
-    let y_result = (my1 + my2)/2
-
-    document.getElementById("mr").innerHTML = `(${x_result}, ${y_result})`
-    console.log(`(${x_result}, ${y_result})`)
+    
 }
 
 update_result();
