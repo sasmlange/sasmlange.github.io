@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://w3schools.com/w3css/4/w3.css">
+    <title>Distance Formula</title>
+</head>
+<body>
+    <div class="w3-container w3-green">
+        <h1>The Distance Formula</h1>
+        Created by Max Lange
+    </div>
+    <br>
+    <div class="w3-container">
+        <div class="w3-container w3-card">
+            <h3>What is the Distance Formula?</h3>
+            <p>The distance formula is used to find the distance between two points on a coordinate plane. The formula is based on pythagorean theorem as the line between two points can be thought of as the hypnoses of a right triangle.</p>
+        </div>
+        <br>
+        <div class="w3-container w3-card">
+            <h3>History of the Distance Formula</h3>
+            <p>While many would credit the distance formula to Pythagoras because of the core role that pythagorean theorem plays in the distance formula. However the very first time the distance formula ever appears in written record in 1731 in <i>Recherches sur les courbes à double courbure</i>, a book written by a French mathematician Alexis Clairaut. In english, the book's title would be Research on Double Curvature Curves. </p>
+            <figure>
+                <img src="clairault.jpg" alt="A portrait of Alexis Clairaut" width="300px">
+                <figcaption>Alexis Clairaut</figcaption>
+            </figure>
+        </div>
+        <br>
+        <div class="w3-container w3-card">
+            <div class="w3-row">
+                <div class="w3-half">
+                    <h3>Distance Formula Calculator</h3>
+                    <p>
+                        Your points: (
+                                <input type="number" style="width: 3em" id="x1" onchange="update_result()" placeholder="0">,
+                                <input type="number" style="width: 3em" id="y1" onchange="update_result()" placeholder="0">
+                            ), (
+                                <input type="number" style="width: 3em" id="x2" onchange="update_result()" placeholder="0">,
+                                <input type="number" style="width: 3em" id="y2" onchange="update_result()" placeholder="0">
+                            )
+                    </p>
+                    <br>
+                </div>
+                <div class="w3-half">
+                    <div id="plot" style="height: 400px"></div>
+                    The line shown is <span id="result">0</span> units long.
+                </div>
+            </div>
+            <button class="w3-btn w3-blue w3-round" id="workbutton" onclick="show_hide_work()">Show Work</button>
+            <div id="work" style="display: block;">
+                First find run: <span id="run"></span> <br>
+                Next find rise: <span id="rise"></span> <br>
+                Finally apply pythagorean theorem: <span id="pt"></span> <br>
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="w3-container w3-card">
+            <h3>What is the Midpoint Formula?</h3>
+            <p>The formula is used to find the midpoint in a line segment. The formula is $$(\frac{x_{1} + x_{2}}{2}, \frac{y_{1} + y_{2}}{2})$$</p>
+        </div>
+        <br>
+        <div class="w3-container w3-card">
+            <h3>Midpoint Formula</h3>
+            Points: (<input type="number" id="mx1" onchange="update_result()">, <input type="number" id="my1" onchange="update_result()">), (<input type="number" id="mx2" onchange="update_result()">, <input type="number" id="my2" onchange="update_result()">)
+            <br>
+            Result: <span id="mr"></span>
+        </div>
+        <br> <br>
+    </div>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
